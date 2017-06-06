@@ -1,0 +1,4 @@
+$('#messages').prepend("<div class='panel panel-default' id='<%= j dom_id(@message) %>'><div class='panel-body'><%= j render 'message', message: @message %></div></div>");
+
+$('#message_content').val('');
+$('#new_message').collapse('hide');

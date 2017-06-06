@@ -1,7 +1,7 @@
 .well
-  = form_for @message do |f|
+  = form_for @message, remote: true do |f|
     p
       = f.text_field :content, class: 'form-control',
-        placeholder: 'Enter your message'
+        placeholder: 'Enter your message', required: true
 
     p = f.submit 'Post', class: 'btn btn-success'
