@@ -1,2 +1,25 @@
-h1 Messages#index
-p Find me in app/views/messages/index.html.slim
+.col-md-3
+  h2 Friends
+
+.col-md-9
+  h2 Messages
+
+  = link_to 'New message', '#new_message', class: 'btn btn-primary',
+    role: 'button',
+    data: { toggle: 'collapse' },
+    aria: { expanded: false, controls: 'new_message' }
+
+  br
+  #new_message.collapse
+    = render 'form', message: @message
+
+  br
+  .well
+    #messages
+      - @messages.each do |message|
+        .panel.panel-default
+          .panel-body
+            .pull-left
+              = message.content
+            .pull-right.text-muted.small
+              = "#{message.user.full_name} #{time_ago_in_words(message.created_at)} ago"

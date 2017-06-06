@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
     :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
+  has_many :messages
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       first_name = auth.info.name.split.first
@@ -12,5 +14,9 @@ class User < ApplicationRecord
       user.first_name = first_name
       user.last_name = last_name
     end
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end

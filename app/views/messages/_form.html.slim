@@ -1,0 +1,7 @@
+.well
+  = form_for @message do |f|
+    p
+      = f.text_field :content, class: 'form-control',
+        placeholder: 'Enter your message'
+
+    p = f.submit 'Post', class: 'btn btn-success'

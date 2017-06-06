@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
+
+  resources :messages, only: [:index, :create]
 end
