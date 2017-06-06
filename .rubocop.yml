@@ -1,0 +1,73 @@
+Style/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+  AutoCorrect: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/IndentationConsistency:
+  EnforcedStyle: normal
+Style/StringLiterals:
+  ConsistentQuotesInMultiline: true
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+Style/AndOr:
+  EnforcedStyle: conditionals
+Metrics/ClassLength:
+  CountComments: false
+  Max: 500
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 500
+Lint/EndAlignment:
+  AutoCorrect: true
+Lint/DefEndAlignment:
+  AutoCorrect: true
+Rails:
+  Enabled: true
+Style/AutoResourceCleanup:
+  Description: 'Suggests the usage of an auto resource cleanup version of a method (if available).'
+  Enabled: true
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 50
+NumericLiterals:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
+Documentation:
+  Enabled: false
+Lint/Debugger:        # Easy deletion of all debugger breakpoints. false for debug
+  Enabled: true
+
+Bundler/OrderedGems:
+  TreatCommentsAsGroupSeparators: true
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+    - 'db/schema.rb'
+    - 'config/initializers/secret_token.rb'
+    - 'node_modules/**/*'
+  TargetRubyVersion: 2.4
+Metrics/AbcSize:
+  Max: 40
+Metrics/CyclomaticComplexity:
+  Max: 11
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Style/DoubleNegation:
+  Description: 'Checks for uses of double negation (!!).'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-bang-bang'
+  Enabled: false
+Style/AsciiComments:
+  Description: 'Use only ascii symbols in comments.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-comments'
+  Enabled: false
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Enabled: false
+Style/SingleLineMethods:
+  Description: 'Avoid single-line methods.'
+  StyleGuide: '#no-single-line-methods'
+  Enabled: false

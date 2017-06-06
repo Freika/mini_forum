@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :message do
-    content "MyText"
+    content 'MyText'
     user
   end
 end

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :messages, except: :show
+  resources :messages, except: [:show, :new]
 end

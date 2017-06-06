@@ -20,15 +20,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def user_friends(auth)
-    access_token = request.env['omniauth.auth']['credentials'].token
+    access_token = auth['credentials'].token
 
-    if access_token.present?
-      graph = Koala::Facebook::API.new(access_token)
+    return unless access_token.present?
 
-      friends = graph.get_connections('me', 'taggable_friends')
-      names = friends.map { |f| f['name'] }
+    graph = Koala::Facebook::API.new(access_token)
 
-      $redis.sadd("users:friends:#{@user.id}", names)
-    end
+    friends = graph.get_connections('me', 'taggable_friends')
+    names = friends.map { |f| f['name'] }
+
+    ReadCache.redis.sadd("users:friends:#{@user.id}", names)
   end
 end

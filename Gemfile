@@ -20,8 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Authentication & Authorization
 gem 'devise', github: 'plataformatec/devise'
-gem 'omniauth-facebook'
 gem 'koala'
+gem 'omniauth-facebook'
 
 gem 'redis'
 gem 'redis-namespace'
@@ -47,12 +47,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'hew', github: 'andrii/hew'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'switch_user'
   gem 'web-console', '>= 3.3.0'
-  gem 'hew', github: 'andrii/hew'
 
   # Code quality
   gem 'rails_best_practices', require: false
