@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 # Authentication & Authorization
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth-facebook'
+gem 'koala'
 
 gem 'figaro'
 

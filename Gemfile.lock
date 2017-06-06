@@ -137,6 +137,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.1.0)
     jwt (1.5.6)
+    koala (3.0.0)
+      addressable
+      faraday
+      json (>= 1.8)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.1.5)
@@ -350,6 +354,7 @@ DEPENDENCIES
   figaro
   fuubar
   jquery-rails
+  koala
   launchy
   listen (>= 3.0.5, < 3.2)
   omniauth-facebook
