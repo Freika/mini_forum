@@ -1,8 +1,11 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_message, only: [:edit, :update, :destroy]
+
   def index
-    @message = current_user.messages.build
+    @message = Message.new
     @messages = Message.order(created_at: :desc)
+    @friends = $redis.smembers("users:friends:#{current_user.id}")
   end
 
   def create

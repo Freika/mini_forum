@@ -23,6 +23,9 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth-facebook'
 gem 'koala'
 
+gem 'redis'
+gem 'redis-namespace'
+
 gem 'figaro'
 
 group :test do
