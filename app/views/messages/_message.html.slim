@@ -2,7 +2,8 @@
   = message.content
 .pull-right.text-muted.small
   => "#{message.user.full_name} #{time_ago_in_words(message.created_at)} ago"
-  - if message.user == current_user
+
+  - if current_user == message.user
     => link_to '[Edit]', edit_message_path(message), remote: true
     = link_to '[x]', message, data: { confirm: 'Are you sure?' },
       method: :delete, remote: true
