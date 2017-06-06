@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = Message.order(created_at: :desc)
+    @messages = Message.includes(:user).order(created_at: :desc)
     @friends = ReadCache.redis.smembers("users:friends:#{current_user.id}")
   end
 

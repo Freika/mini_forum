@@ -21,8 +21,7 @@
   .well
     #messages
       - @messages.each do |message|
-        .panel.panel-default id=(dom_id(message))
-          .panel-body
-            = render message
-
-
+        - cache message do
+          .panel.panel-default id=(dom_id(message))
+            .panel-body
+              = render message
