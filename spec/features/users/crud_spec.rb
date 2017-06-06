@@ -131,4 +131,13 @@ feature 'User' do
       expect(user.reload.last_name).to eq 'Doe'
     end
   end
+
+  scenario 'Login with Facebook' do
+    visit root_path
+    within 'nav' do
+      click_on 'Sign in with Facebook'
+    end
+
+    expect(page).to have_content 'Successfully authenticated from Facebook account.'
+  end
 end

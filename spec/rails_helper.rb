@@ -42,4 +42,16 @@ Capybara.javascript_driver = :poltergeist
 
 Capybara.server_port = 3001
 Capybara.app_host = 'http://localhost:3001'
-# OmniAuth.config.test_mode = true
+OmniAuth.config.test_mode = true
+
+OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+   'provider' => 'facebook',
+   'credentials' => { 'token' => 'token' },
+   'uid' => '123545',
+   'info' => {
+     'email' => 'example_facebook@xyze.it',
+     'name' => 'Alberto Pellizzon',
+     'first_name' => 'Alberto',
+     'last_name' => 'Pellizzon',
+   }
+ )
