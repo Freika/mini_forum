@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 # Authentication & Authorization
 gem 'devise', github: 'plataformatec/devise'
 gem 'koala'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', github: 'mkdynamic/omniauth-facebook'
 
 gem 'redis'
 gem 'redis-namespace'
