@@ -27,5 +27,22 @@ module MiniForum
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.time_zone = 'UTC'
+    config.active_record.default_timezone = :utc
+
+    config.action_dispatch.default_headers['Content-Type'] =
+      'text/html; charset=UTF-8'
+    config.action_dispatch.default_headers['X-UA-Compatible'] = 'IE=edge'
+
+    config.generators do |g|
+      g.test_framework(
+        :rspec,
+        view_specs:    false,
+        request_specs: false,
+        routing_specs: false,
+        helper_specs:  false
+      )
+    end
   end
 end
