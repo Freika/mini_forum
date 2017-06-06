@@ -49,6 +49,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'switch_user'
   gem 'web-console', '>= 3.3.0'
+  gem 'hew', github: 'andrii/hew'
 
   # Code quality
   gem 'rails_best_practices', require: false

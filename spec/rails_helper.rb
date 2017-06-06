@@ -27,6 +27,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Warden::Test::Helpers
   config.include Devise::TestHelpers, type: :controller
+  config.include ActionView::RecordIdentifier
 end
 
 Capybara.register_driver :poltergeist do |app|

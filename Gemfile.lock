@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/andrii/hew.git
+  revision: aae88942d5286d48bb80bf34c5d391e5d88ecf79
+  specs:
+    hew (0.0.1)
+
+GIT
   remote: https://github.com/plataformatec/devise.git
   revision: 079ed3b6f8b671acde2dd630d28d21adb010fb3a
   specs:
@@ -353,6 +359,7 @@ DEPENDENCIES
   ffaker
   figaro
   fuubar
+  hew!
   jquery-rails
   koala
   launchy
