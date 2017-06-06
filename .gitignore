@@ -22,3 +22,6 @@
 rubocop.html
 brakeman.html
 railsbp.html
+
+# Ignore application configuration
+/config/application.yml

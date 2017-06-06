@@ -11,6 +11,7 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 
 # Assets
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
@@ -19,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # Authentication & Authorization
 gem 'devise', github: 'plataformatec/devise'
+gem 'omniauth-facebook'
+
+gem 'figaro'
 
 group :test do
   gem 'capybara', '~> 2.11.0'

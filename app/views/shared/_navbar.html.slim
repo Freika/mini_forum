@@ -1,33 +1,32 @@
-nav.navbar.navbar-default.navbar-fixed-top.topnav role='navigation'
-  .container.topnav
+nav.navbar.navbar-default role='navigation'
+  .navbar-header
+    button.navbar-toggle data-target='#navbar-collapse' data-toggle='collapse' type='button'
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    = link_to 'MiniForum', root_path, class: 'navbar-brand topnav'
 
-    .navbar-header
-      button.navbar-toggle data-target='#navbar-collapse' data-toggle='collapse' type='button'
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      = link_to 'MiniForum', root_path, class: 'navbar-brand topnav'
-
-    #navbar-collapse.collapse.navbar-collapse
-      ul.nav.navbar-nav
-      ul.nav.navbar-nav.navbar-right
-        li
-          a#service_updates
-            i.glyphicon.glyphicon-bell
-        - if signed_in?
-          li.dropdown
-            a.dropdown-toggle href='#' data-toggle='dropdown'
-              i.glyphicon.glyphicon-th-large
-              span.caret
-            ul.dropdown-menu role='menu'
-              li = link_to 'Settings', edit_user_registration_path
-              li = link_to 'Logout', destroy_user_session_path, data: { method: :delete }
-        - else
-          li.dropdown
-            a.dropdown-toggle href='#' data-toggle='dropdown'
-              i.glyphicon.glyphicon-lock
-              span.caret
-            ul.dropdown-menu role='menu'
-              li = link_to 'Login', new_user_session_path
-              li = link_to 'Register', new_user_registration_path
+  #navbar-collapse.collapse.navbar-collapse
+    ul.nav.navbar-nav
+    ul.nav.navbar-nav.navbar-right
+      li
+        a#service_updates
+          i.glyphicon.glyphicon-bell
+      - if signed_in?
+        li.dropdown
+          a.dropdown-toggle href='#' data-toggle='dropdown'
+            i.glyphicon.glyphicon-th-large
+            span.caret
+          ul.dropdown-menu role='menu'
+            li = link_to 'Settings', edit_user_registration_path
+            li = link_to 'Logout', destroy_user_session_path, data: { method: :delete }
+      - else
+        li.dropdown
+          a.dropdown-toggle href='#' data-toggle='dropdown'
+            i.glyphicon.glyphicon-lock
+            span.caret
+          ul.dropdown-menu role='menu'
+            li = link_to 'Login', new_user_session_path
+            li = link_to 'Sign in with Facebook', user_facebook_omniauth_authorize_path
+            li = link_to 'Register', new_user_registration_path
