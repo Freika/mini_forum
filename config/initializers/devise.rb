@@ -255,7 +255,7 @@ Devise.setup do |config|
     :facebook,
     ENV['FB_APP_ID'],
     ENV['FB_APP_SECRET'],
-    callback_url: 'http://localhost:3000/users/auth/facebook/callback',
+    callback_url: "#{ENV['HOST']}/users/auth/facebook/callback",
     scope: 'email,user_friends,public_profile'
   )
 
