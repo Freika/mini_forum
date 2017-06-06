@@ -1,24 +1,20 @@
-# README
+# Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Requirements: Redis, Ruby 2.4+
 
-Things you may want to cover:
+1. `bundle install`
+2. `rails db:create db:migrate`
+3. `rails server`
+4. Visit `http://localhost:3000`
+5. Register via email/password or Facebook
+6. Create some messages
+7. If you've registered via Facebook, list of your FB friends should be on the left.
+8. ???
+9. PROFIT!!!
 
-* Ruby version
+## Tests
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+RAILS_ENV=test rails db:migrate
+bundle exec rspec
+```
